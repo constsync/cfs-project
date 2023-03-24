@@ -54,7 +54,39 @@ export default function GroceryListScreen() {
     // Form handlers
     const [formData, setFormData] = useState(stockFormData);
 
-    const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const storageOptions = [
+        {
+            name: 'Freezer',
+            value: 'freezer'
+        },
+        {
+            name: 'Refrigerator',
+            value: 'refrigerator'
+        },
+        {
+            name: 'Pantry',
+            value: 'pantry'
+        },
+        {
+            name: 'Cabinet',
+            value: 'cabinet'
+        },
+        {
+            name: 'Other/Dry',
+            value: 'other/dry'
+        },
+        {
+            name: 'Other/Cold',
+            value: 'other/cold'
+        },
+        {
+            name: 'Other',
+            value: 'other'
+        }
+    ];
+
+    // @ts-ignore
+    const onInputChange = (e) => {
         setFormData((prevState) => ({
             ...prevState,
             [e.target.id]: e.target.value
@@ -137,7 +169,9 @@ export default function GroceryListScreen() {
                                 <input id="itemName" className="form-control mb-2" type="text" placeholder="Item name" value={formData.itemName} onChange={onInputChange} required />
                                 <input id="itemQuantity" className="form-control mb-2" type="number" placeholder="Quantity" value={formData.itemQuantity} onChange={onInputChange} required />
                                 <input id="itemUnits" className="form-control mb-2" type="text" placeholder="Units" value={formData.itemUnits} onChange={onInputChange} required />
-                                <input id="itemLocation" className="form-control mb-2" type="text" placeholder="Storage location" value={formData.itemLocation} onChange={onInputChange} required />
+                                <select id="itemLocation" className="form-control mb-2" value={formData.itemLocation} onChange={onInputChange} required>
+                                    {storageOptions.map(item => <option value={item.value}>{item.name}</option>)}
+                                </select>
                                 <input id="itemExpiration" className="form-control mb-2" type="date" placeholder="Expiration date" value={formData.itemExpiration} onChange={onInputChange} required />
 
                                 <Button className="modalActionBtn" variant="success" type="submit">
