@@ -1,0 +1,70 @@
+{
+    "data": {
+        "items": [
+            {
+                "id": "01",
+                "name" : "lays chips",
+                "quantity": 6,
+                "units": "bags",
+                "location": "pantry",
+                "expires": "2023-05-26"
+            },
+            {
+                "id": "02",
+                "name" : "2% milk",
+                "quantity": 1,
+                "units": "gallon",
+                "location": "refrigerator",
+                "expires": "2023-04-19"
+            },
+            {
+                "id": "03",
+                "name" : "chicken breast",
+                "quantity": 4,
+                "units": "lbs",
+                "location": "refrigerator",
+                "expires": "2023-04-23"
+            },
+            {
+                "id": "04",
+                "name" : "lettuce",
+                "quantity": 5,
+                "units": "head",
+                "location": "refrigerator",
+                "expires": "2023-04-30"
+            },
+            {
+                "id": "05",
+                "name" : "ranch dressing",
+                "quantity": 1,
+                "units": "bottle",
+                "location": "refrigerator",
+                "expires": "2023-05-06"
+            },
+            {
+                "id": "06",
+                "name" : "frosted flakes",
+                "quantity": 2,
+                "units": "box",
+                "location": "pantry",
+                "expires": "2023-09-05"
+            },
+            {
+                "id": "07",
+                "name" : "granular sugar",
+                "quantity": 4,
+                "units": "lbs",
+                "location": "cabinet",
+                "expires": "2026-04-05"
+            },
+            {
+                "id": "08",
+                "name" : "chocolate chips",
+                "quantity": 16,
+                "units": "ounces",
+                "location": "cabinet",
+                "expires": "2025-05-03"
+            }
+        ]
+    }
+}
