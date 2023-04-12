@@ -16,13 +16,14 @@ export default function Root() {
         <div className="d-flex">
             <Sidebar/>
 
-            <Container className="mainContent">
+            <section className="mainContent">
                 <h4>Inventory List</h4>
 
                 <div className="inventoryTable_area">
-                    <InventoryList items={inventoryItems}  />
+                    <InventoryList items={inventoryItems}/>
                 </div>
-            </Container>
+            </section>
         </div>
     );
 }
+

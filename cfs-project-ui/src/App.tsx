@@ -37,7 +37,6 @@ export default function App() {
 
     async function handleFetch() {
       const data = await fetch('http://localhost:8081/api/inventory/items').then((res) => res.json()).then((resData) => {
-        
         console.log('resData:', resData.data.items);
         return resData.data.items;
       }).catch((error) => console.error('Failed to fetch inventory items:', error));

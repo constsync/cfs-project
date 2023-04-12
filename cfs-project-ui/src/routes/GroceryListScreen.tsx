@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {v4 as uuid} from 'uuid';
 
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
 
 import Sidebar from '../components/Sidebar';
@@ -126,15 +125,13 @@ export default function GroceryListScreen() {
                 return item;
             }
         }).forEach((item: InventoryItemModel) => dispatch(addGroceryItem(item)));
-
-        console.log('items to replenish:', itemsToReplenish);
     }, []);
 
     return (
         <div className="d-flex">
             <Sidebar/>
             <>
-                <Container className="mainContent">
+                <section className="mainContent">
                     <h4>Grocery List</h4>
 
                     <div className="groceryList_header d-flex">
@@ -145,16 +142,18 @@ export default function GroceryListScreen() {
                         </div>
                     </div>
 
-                    <div className="d-flex flex-column">
-                        {currentGroceryItems.length > 0 ? (
-                            currentGroceryItems.map(item => <GroceryListItem key={item.id} item={item} />)
-                        ) : (
-                            <div>
-                                <p>No grocery items...</p>
-                            </div>
-                        )}
+                    <div className="d-flex justify-content-center w-full">
+                        <div className="d-flex flex-column justify-content-center">
+                            {currentGroceryItems.length > 0 ? (
+                                currentGroceryItems.map(item => <GroceryListItem key={item.id} item={item} />)
+                            ) : (
+                                <div>
+                                    <p>No grocery items...</p>
+                                </div>
+                            )}
+                        </div>
                     </div>
-                </Container>
+                </section>
 
                 <Modal show={showAddNewModal} onHide={closeAddNewModal} centered={true}>
                     <Modal.Header closeButton>

@@ -12,6 +12,8 @@ import { InventoryItemModel } from '../interfaces';
 
 import { updateGroceryItemQuantity, removeGroceryItem } from '../store/slices/GroceryListSlice';
 
+import '../styles/components/GroceryItem.css';
+
 interface Props {
     item: InventoryItemModel
 }
@@ -41,7 +43,7 @@ export default function GroceryListItem(props: Props) {
 
     return (
         <>
-            <div className="d-flex justify-content-around align-items-center bg-white border mb-2">
+            <div className="groceryItem d-flex justify-content-evenly align-items-center bg-white border mb-2">
                     <div className="d-flex flex-column text-center w-25 p-2">
                         <span className="font-weight-bold text-uppercase">
                             Name
@@ -88,7 +90,7 @@ export default function GroceryListItem(props: Props) {
                     <form onSubmit={(e) => { e.preventDefault(); handleEditGroceryItem(props.item.id, newQuantity)}}>
                         <div className="d-flex flex-column align-items-center">
                             <span>Quantity</span>
-                            <input className="form-control" type="number" defaultValue={props.item.quantity} onChange={(e) => setNewQuantity(Number(e.target.value))} />
+                            <input className="form-control" type="number" min={1} defaultValue={props.item.quantity} onChange={(e) => setNewQuantity(Number(e.target.value))} />
                         </div>
 
                         <div className="d-flex justify-content-around mt-5">

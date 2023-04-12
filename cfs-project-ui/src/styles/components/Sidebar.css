@@ -5,6 +5,14 @@
     border-right: 1px solid #BDBDBD;
 }
 
+.sidebar_header {
+    background-color: #455A64;
+}
+
+.sidebar_barsIc {
+    margin-left: auto;
+}
+
 .sidebar_content {
     display: flex col;
 }

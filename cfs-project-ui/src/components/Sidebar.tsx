@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { NavLink, useLocation } from 'react-router-dom';
+import {NavLink, useLocation} from 'react-router-dom';
 
 import '../styles/components/Sidebar.css';
 
 export default function Sidebar() {
     const location = useLocation();
-    const [isActiveTab, setActiveTab] = React.useState<boolean>(false);
     const [pathName, setPathName] = React.useState<string>('');
 
     React.useEffect(() => {
